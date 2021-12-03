@@ -31,16 +31,30 @@ app.post('/restaurants/create', async (req, res) => {
 
 });
 
-app.get('/restaurantslist', async (req, res)=> {
+app.get('/restaurants', async (req, res)=> {
     const restaurants = await Restaurant.find({})
     res.send(restaurants)
     
 })
 
+app.put('/restaurants/:id/edit', async (req, res) =>{
+    const { id } = req.params;
+    const restaurant = await Restaurant.findByIdAndUpdate(id , {...req.body})
+    res.send(restaurant)
+})
+
 app.get('/restaurants/:id', async (req, res) => {
     const restaurant = await Restaurant.findById(req.params.id)
     res.send(restaurant)
+    
 })
+
+app.delete('/restaurants/:id' , async (req, res) =>{
+    const { id } = req.params
+    await Restaurant.findByIdAndDelete(id)
+    res.send('Ok')
+})
+
 
 
 

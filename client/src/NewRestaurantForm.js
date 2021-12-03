@@ -1,19 +1,16 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function NewRestaurantForm () {
     const [title, setTitle] = useState('');
     const [location, setLocation] = useState('');
+    let navigate = useNavigate();
 
     const addRestaurant = (e) => {
         e.preventDefault();
         axios.post('http://localhost:5000/restaurants/create', {title: title, location: location})
-            .then(() => {
-                console.log('yay! It worked')
-            })
-            .catch(() => {
-                console.log('oops! didnt work')
-            })
+            navigate('/restaurants')
     }
 
     return(

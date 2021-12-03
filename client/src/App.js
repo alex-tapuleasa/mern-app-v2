@@ -1,8 +1,8 @@
 import './App.css';
-import {Routes, Route, Outlet, Switch } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import NewRestaurantForm from './NewRestaurantForm'
 import RestaurantList from './RestaurantList';
-import Restaurant from './Restaurant';
+import RestaurantDetails from './RestaurantDetails';
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
       
       <Routes>
         <Route path='/new' element={ <NewRestaurantForm  /> }> </Route>
-        <Route path='/restaurantslist' element={ <RestaurantList />} > </Route>
-        <Route path='/restaurants/:id' element={<Restaurant /> } > </Route>
+        <Route path='restaurants' element={ <RestaurantList />} > </Route>
+        <Route path='restaurants/:id' element={<RestaurantDetails /> } > </Route>
       </Routes>
       
       
