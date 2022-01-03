@@ -1,7 +1,9 @@
 import React, { useState , useEffect } from 'react';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import Restaurant from './Restaurant';
+import Button from '@mui/material/Button';
+
 
 
 
@@ -26,18 +28,14 @@ function RestaurantList (props) {
         <div>
            
             {restaurants.map(restaurant => (
-                <li>
-                  <Link to={`${restaurant._id}`}>
-                    <Restaurant 
+                  <Restaurant 
+                      description = {restaurant.description}
                       id = {restaurant._id}
                       title={restaurant.title}
                       location={restaurant.location}
                       key={restaurant._id}  />
-                  </Link>
-                </li>
-               
             ) )}  
-          <button><a href='/new'>Add Restaurant</a></button>
+          <Button variant='contained' href='/new'>Add Restaurant</Button>
         </div>
         
     )

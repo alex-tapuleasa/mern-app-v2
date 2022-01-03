@@ -24,8 +24,8 @@ app.use(express.json());
 
 
 app.post('/restaurants/create', async (req, res) => {
-    const {title, location} = req.body;
-    const restaurant = new Restaurant({title: title, location: location})
+    const {title, location, description} = req.body;
+    const restaurant = new Restaurant({title: title, location: location, description: description})
     await restaurant.save();
     
 
@@ -40,6 +40,7 @@ app.get('/restaurants', async (req, res)=> {
 app.put('/restaurants/:id/edit', async (req, res) =>{
     const { id } = req.params;
     const restaurant = await Restaurant.findByIdAndUpdate(id , {...req.body})
+    restaurant.save()
     res.send(restaurant)
 })
 
