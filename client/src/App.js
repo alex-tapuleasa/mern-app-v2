@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 function App() {
+  console.log("App rendering")
   return (
     <div className="App">
       <Navbar />

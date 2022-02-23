@@ -44,7 +44,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{mb: 5}}>
+    <AppBar position="fixed" sx={{mb: 5}}>
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <Typography

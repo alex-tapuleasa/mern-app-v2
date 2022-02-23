@@ -33,9 +33,11 @@ function RestaurantList (props) {
                       id = {restaurant._id}
                       title={restaurant.title}
                       location={restaurant.location}
+                      image={restaurant.image}
+                      price={restaurant.price}
                       key={restaurant._id}  />
             ) )}  
-          <Button variant='contained' href='/new'>Add Restaurant</Button>
+          {/* <Button variant='contained' href='/new'>Add Restaurant</Button> */}
         </div>
         
     )

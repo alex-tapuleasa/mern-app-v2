@@ -11,11 +11,11 @@ import photo1 from './photo-1.jpeg'
 
 function Restaurant (props) {
    
-    const {title, location, description, id} = props;
+    const {title, location, description, image, price, id} = props;
     return(
         <div>
             
-            <Card sx={{ maxWidth: 645, mb:2 }}>
+            <Card sx={{ maxWidth: 645, mb: 2, mt: 10, ml: 15 }}>
       <CardMedia
         component="img"
         height="140"
@@ -32,9 +32,15 @@ function Restaurant (props) {
         <Typography variant="body2" color="text.secondary">
           {description}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {image}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {price}
+        </Typography>
       </CardContent>
       <CardActions>
-        <Button href={`/restaurants/${id}`} size="small">Learn More</Button>
+        <Button href={`/restaurants/${id}`} size="small">Details</Button>
       </CardActions>
     </Card>
            
